@@ -22,10 +22,7 @@ stages:
   - lint
   - test
   - name: publish
-    if: branch = master
-      AND repo = boopathi/travis-node-build-stages-test
-      AND type = push
-      AND NOT (env(TRAVIS_COMMIT_MESSAGE) =~ \[skip publish\])
+    if: branch = master AND repo = boopathi/travis-node-build-stages-test AND type = push AND NOT (env(TRAVIS_COMMIT_MESSAGE) =~ \[skip publish\])
 
 jobs:
   include:
@@ -34,4 +31,6 @@ jobs:
       script: yarn lint
     - stage: publish
       node_js: 8
-      script: yarn publish-master
+      deploy:
+        provider: script
+        script: yarn publish-master
