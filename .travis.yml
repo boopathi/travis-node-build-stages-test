@@ -23,9 +23,9 @@ stages:
   - test
   - name: publish
     if: branch = master
-    if: repo = boopathi/travis-node-build-stages-test
-    if: type = push
-    if: NOT (env(TRAVIS_COMMIT_MESSAGE) =~ \[skip publish\])
+      AND repo = boopathi/travis-node-build-stages-test
+      AND type = push
+      AND NOT (env(TRAVIS_COMMIT_MESSAGE) =~ \[skip publish\])
 
 jobs:
   include:
