@@ -12,5 +12,8 @@
     "lint": "echo Lint",
     "publish-master": "echo Publish",
     "test": "echo Test"
+  },
+  "dependencies": {
+    "noop": "^0.2.2"
   }
 }
