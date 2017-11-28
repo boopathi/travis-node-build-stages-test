@@ -1,0 +1,30 @@
+sudo: false
+langauage: node_js
+cache: yarn
+
+node_js:
+  - 8
+  - 6
+  - 4
+
+before_script:
+  - yarn clean
+  - yarn build
+
+script:
+  - yarn test
+
+stages:
+  - lint
+  - test
+  - name: publish
+    if: (branch = master) AND (repo = boopathi/travis-node-build-stages-test)
+
+jobs:
+  include:
+    - stage: lint
+      node_js: 8
+      script: yarn lint
+    - stage: publish
+      node_js: 8
+      script: yarn publish-master

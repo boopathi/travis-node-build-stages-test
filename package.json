@@ -1,0 +1,16 @@
+{
+  "name": "travis-node-build-stages-test",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "boopathi <me@boopathi.in>",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo Build",
+    "clean": "echo Clean",
+    "lint": "echo Lint",
+    "publish-master": "echo Publish",
+    "test": "echo Test"
+  }
+}
